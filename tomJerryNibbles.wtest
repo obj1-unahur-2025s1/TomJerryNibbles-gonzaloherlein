@@ -2,16 +2,31 @@ import tomJerryNibbles.*
 
 describe "Grupo de test" {
 
-  test "test 1" {
-    assert.equals(100, 50+50)
+  test "Casos de pruebas - Parte 1" {
+    assert.equals(tom.velocidadMaxima(), 10)
+
+    tom.comerRaton(jerry)
+    assert.equals(tom.velocidadMaxima(),15.2)
+
+    tom.correr(24)
+    assert.equals(tom.velocidadMaxima(),14)
+
+    tom.comerRaton(nibbles)
+    assert.equals(tom.velocidadMaxima(),18.7)
+
+    jerry.cumplirAnios()
+    tom.comerRaton(jerry)
+    assert.equals(tom.velocidadMaxima(), 25.9)
+
+    tom.correr(38)
+    assert.equals(tom.velocidadMaxima(), 24)
   }
 
-  test "test 3" {
-    assert.that(true)
+  test "Casos de pruebas - Parte 2"{
+    assert.notThat(tom.puedeCazar(110))
+    assert.that(tom.puedeCazar(40))
+    tom.puedeCazarAUnRaton(mickey,50)
+    assert.equals(tom.getEnergia(),57)
+    assert.equals(tom.velocidadMaxima(),10.7)
   }
-
-  test "test 4" {
-    assert.notThat(false)
-  }
-
 }
