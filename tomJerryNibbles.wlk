@@ -1,16 +1,23 @@
 object tom {
     var energia = 50
-    
+    var ultimoRatonComido = jerry
+
+    method cambiarUltimoRatonComido(ratonComido){
+        ultimoRatonComido = ratonComido
+    }
+
+    method ultimoRatonComido(){
+        return ultimoRatonComido
+    }
+
     method getEnergia() = energia
 
     method correr(metrosRecorridos){
         energia -= ( metrosRecorridos / 2 )
-        return energia
     }
 
     method comerRaton(raton){
         energia += 12 + raton.peso()
-        return energia
     }
     
     method velocidadMaxima(){
