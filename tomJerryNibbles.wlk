@@ -18,6 +18,7 @@ object tom {
 
     method comerRaton(raton){
         energia += 12 + raton.peso()
+        self.cambiarUltimoRatonComido(raton)
     }
     
     method velocidadMaxima(){
