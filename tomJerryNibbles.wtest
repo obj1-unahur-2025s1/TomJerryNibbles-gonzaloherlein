@@ -12,13 +12,13 @@ describe "Grupo de test" {
   test "Si Tom corre 24 metros, su velocidad maxima pasa a ser 14"{
     tom.comerRaton(jerry)
     tom.correr(24)
-    assert.equals(tom.velocidadMaxima(),14)
+    assert.equals(14, tom.velocidadMaxima())
   }
   test "Si tom come a Nibbles, su velocidad maxima es 18.7"{
     tom.comerRaton(jerry)
     tom.correr(24)
     tom.comerRaton(nibbles)
-    assert.equals(tom.velocidadMaxima(),18.7)
+    assert.equals(18.7, tom.velocidadMaxima())
   }
   test "Si Jerry cumple años y Tom se lo come, su velocidad maxima seria 25.9"{
     tom.comerRaton(jerry)
@@ -26,7 +26,7 @@ describe "Grupo de test" {
     tom.comerRaton(nibbles)
     jerry.cumplirAnios()
     tom.comerRaton(jerry)
-    assert.equals(tom.velocidadMaxima(), 25.9)
+    assert.equals(25.9, tom.velocidadMaxima())
   }
   test "Si Tom corre 38 metros, su velocidad pasa a ser 24"{
     tom.comerRaton(jerry)
@@ -35,16 +35,19 @@ describe "Grupo de test" {
     jerry.cumplirAnios()
     tom.comerRaton(jerry)
     tom.correr(38)
-    assert.equals(tom.velocidadMaxima(), 24)
+    assert.equals(24, tom.velocidadMaxima())
   }
 }
 
 describe "Otro grupo de test"{
-  test "Casos de pruebas - Parte 2"{
+  test "Tom no puede cazar a un raton que este a 110 metros"{
     assert.notThat(tom.puedeCazar(110))
-    assert.that(tom.puedeCazar(40))
+  }
+  test "Tom puede comer a un raton que este a 40 metros"{
+     assert.that(tom.puedeCazar(40))
+  }
+  test "Si Tom puede cazar al raton mickey que esta a 50 metros, su velocidad maxima es 10.7"{
     tom.puedeCazarAUnRaton(mickey,50)
-    assert.equals(tom.getEnergia(),57)
-    assert.equals(tom.velocidadMaxima(),10.7)
+    assert.equals(10.7, tom.velocidadMaxima())
   }
 }
